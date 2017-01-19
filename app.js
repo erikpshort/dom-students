@@ -110,14 +110,17 @@ return error
 }
 
 function drawStudents(roster){
-
+  console.log('Are we here? line 114')
   var rosterElem = document.getElementById('student-roster')
   rosterElem.innerHTML = ''
+  console.log('Are we here? line 117')
+  
   for (var i = 0; i < roster.length; i++) {
     var student = roster[i];
+    
     rosterElem.innerHTML += '<tr><td>'+ (i+1) +'</td><td>'+ student.name +'</td></tr>'
+    console.log(i,' its working!!!')
   }
-
 }
 
 
@@ -126,7 +129,55 @@ function handleReset(){
 }
 
 
+function addStudent(){
+
+  var studentName = document.getElementById('new-student').value
+
+  students.push({
+    name: studentName
+  })
+
+  drawStudents(students)
+
+}
+
+
+
+
+
+
+
 drawStudents(students)
+
+
+
+
+
+
+
+// OBJECTS 
+var spaceship = {
+   cockpit: {
+       console: {
+           buttons: [{color: 'red', warning: 'DO NOT TOUCH', action: function(){}, isOn: false},{color: 'green', warning: 'sall good', action: function(){}, isOn: true}]
+       },
+	   seats: [{color: 'brown', material: 'pleather', isOccuppied: false}]
+   }
+
+
+}
+
+
+for(var i = 0; i < spaceship.cockpit.console.buttons.length; i++){
+
+    var button = spaceship.cockpit.console.buttons[i]
+    
+    for(var prop in button){
+      document.write(prop+':'+ button[prop] +'<br>')
+    }
+  document.write('<hr>')
+
+}
 
 
 
