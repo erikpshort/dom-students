@@ -2,48 +2,60 @@ function StudentService() {
 
   var students = [{
     id: 0,
-    name: 'Jake'
+    name: 'Jake',
+    phone: 8675309
   }, {
     id: 1,
     name: 'Mark',
-    repeatStudent: true
+    repeatStudent: true,
+    phone: 8675309
   }, {
     id: 2,
-    name: 'John'
+    name: 'John',
+    phone: 8675309
   }, {
     id: 3,
-    name: 'Jerry'
+    name: 'Jerry',
+    phone: 8675309
   }, {
     id: 4,
-    name: 'Joe'
+    name: 'Joe',
+    phone: 8675309
   }, {
     id: 5,
-    name: 'Jack'
+    name: 'Jack',
+    phone: 8675309
   }, {
     id: 6,
-    name: 'Jim'
+    name: 'Jim',
+    phone: 8675309
   }, {
     id: 7,
     name: 'Jesse',
     phone: 8675309
   }, {
     id: 8,
-    name: 'Jessie'
+    name: 'Jessie',
+    phone: 8675309
   }, {
     id: 9,
-    name: 'Jeremey'
+    name: 'Jeremey',
+    phone: 8675309
   }, {
     id: 10,
-    name: 'Justin'
+    name: 'Justin',
+    phone: 8675309
   }]
 
   this.getStudents = function () {
     return students.slice(0, students.length)
   }
 
-  this.addStudent = function(studentName){
+  this.addStudent = function(studentName, studentPhone){
     students.push({
-      name: studentName
+      id: students.length,
+      name: studentName,
+      phone: studentPhone,
     })
   }
 

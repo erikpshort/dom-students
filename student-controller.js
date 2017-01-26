@@ -16,7 +16,7 @@ function StudentController() {
     for (var i = 0; i < roster.length; i++) {
       var student = roster[i];
 
-      rosterElem.innerHTML += '<tr><td>' + (i + 1) + '</td><td>' + student.name + '</td></tr>'
+      rosterElem.innerHTML += '<tr><td>' + student.id + '</td><td>' + student.name + '</td><td>'+ student.phone +'</tr>'
       console.log(i, ' its working!!!')
     }
   }
@@ -26,11 +26,17 @@ function StudentController() {
     drawStudents(students)
   }
 
-  this.addStudent = function addStudent() {
-
-    var studentName = document.getElementById('new-student').value
-
-    studentService.addStudent(studentName)
+  this.addStudent = function addStudent(e) {
+    debugger
+    e.preventDefault()
+    var form = e.target
+   
+    
+    
+    var studentName = form['student-name'].value
+    var studentPhone = form['student-phone'].value
+    var studentBio = form['student-bio'].value
+    studentService.addStudent(studentName, studentPhone)
 
     this.handleReset()
   }

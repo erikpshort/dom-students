@@ -10,9 +10,12 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-
-          <input type="text" id="new-student" />
-          <button onclick="studentCtrl.addStudent()">ADD STUDENT</button>
+          <form onsubmit="studentCtrl.addStudent(event)">
+          <input type="text" name="student-name" placeholder="Name" required/>
+          <input type="tel" name="student-phone" placeholder="Phone #"required/>
+          <textarea name="student-bio" id="" cols="30" rows="10"></textarea>
+          <button type="submit">ADD STUDENT</button>
+          </form>
           <hr>
 
           <input type="text" id="query">
@@ -23,6 +26,7 @@
               <tr>
                 <th>id</th>
                 <th>Name</th>
+                <th>Phone</th>
               </tr>
             </thead>
             <tbody id="student-roster">
